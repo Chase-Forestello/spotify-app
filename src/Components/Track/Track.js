@@ -1,16 +1,20 @@
 import React from "react";
 import "./Track.css";
 
-function Track() {
-  <div class="Track">
-    <div class="Track-information">
-      <h3>{/*<!-- track name will go here -->*/}</h3>
-      <p>
-        {/*{<!-- track artist will go here--> | <!-- track album will go here -->}*/}
-      </p>
+function Track(props) {
+  console.log(props);
+  const name = props.name;
+  return (
+    <div className="Track">
+      <div className="Track-information">
+        <h3>{name}</h3>
+        <p>
+          {props.artist} | {props.album}
+        </p>
+      </div>
+      <button className="Track-action">{/*<!-- + or - will go here -->*/}</button>
     </div>
-    <button class="Track-action">{/*<!-- + or - will go here -->*/}</button>
-  </div>;
+  );
 }
 
 export default Track;
