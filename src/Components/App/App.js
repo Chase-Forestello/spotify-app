@@ -1,18 +1,22 @@
+import Playlist from "../Playlist/Playlist";
+import SearchBar from "../SearchBar/SearchBar";
+import SearchResults from "../SearchResults/SearchResults";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <h1>
-          Ja<span class="highlight">mmm</span>ing
-        </h1>
-        <div class="App">
-          {/* <!-- Add a SearchBar component --> */}
-          <div class="App-playlist">
-            {/* <!-- Add a SearchResults component --> */}
-            {/* <!-- Add a Playlist component --> */}
-          </div>
+    <div>
+      <h1>
+        Ja<span className="highlight">mmm</span>ing
+      </h1>
+      <div className="App">
+        {/* <!-- Add a SearchBar component --> */}
+        <SearchBar />
+        <div className="App-playlist">
+          {/* <!-- Add a SearchResults component --> */}
+          <SearchResults />
+          {/* <!-- Add a Playlist component --> */}
+          <Playlist />
         </div>
       </div>
     </div>
