@@ -12,7 +12,9 @@ function Track(props) {
           {props.track.artist} | {props.track.album}
         </p>
       </div>
-      <button className="Track-action">{/*<!-- + or - will go here -->*/}+</button>
+      <button className="Track-action">
+        {/*<!-- + or - will go here -->*/}+
+      </button>
     </div>
   );
 }

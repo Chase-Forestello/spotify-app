@@ -8,10 +8,7 @@ function TrackList(props) {
     <div className="TrackList">
       {/* <!-- You will add a map method that renders a set of Track components  --> */}
       {props.tracks.map((track) => {
-        return (
-          <Track track={track} key={track.id}
-          />
-        );
+        return <Track track={track} key={track.id} />;
       })}
     </div>
   );
