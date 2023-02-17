@@ -5,12 +5,12 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App(props) {
-  const [searchResults, setSearchResults] = useState({
+  const [searchResults, setSearchResults] = useState([{
     name: "name1",
     artist: "artist1",
     album: "album1",
     id: 1,
-  });
+  }]);
   return (
     <div>
       <h1>
