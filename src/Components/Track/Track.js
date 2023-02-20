@@ -2,7 +2,7 @@ import React from "react";
 import "./Track.css";
 
 function Track(props) {
-  console.log(props);
+  // console.log(props);
   const name = props.track.name;
   return (
     <div className="Track">
@@ -13,7 +13,8 @@ function Track(props) {
         </p>
       </div>
       <button className="Track-action">
-        {/*<!-- + or - will go here -->*/}+
+        {/*<!-- + or - will go here -->*/}
+        {props.isRemoval ? "-" : "+"}
       </button>
     </div>
   );

@@ -13,6 +13,46 @@ function App(props) {
       id: 1,
     },
   ]);
+
+  const [playlistName, setPlaylistName] = useState("My Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState([
+    {
+      name: "name2",
+      artist: "artist2",
+      album: "album2",
+      id: 2,
+    },
+  ]);
+
+  function addTrack(track) {
+    if (
+      this.state.playlistTracks.find((savedTrack) => savedTrack.id === track.id)
+    ) {
+      return;
+    }
+    this.setState({ playlistTracks: [...this.state.playlistTracks, track] });
+  }
+
+  function removeTrack(track) {
+    this.setState({
+      playlistTracks: this.state.playlistTracks.filter(
+        (savedTrack) => savedTrack.id !== track.id
+      ),
+    });
+  }
+
+  function updatePlaylistName(name) {
+    this.setState({ playlistName: name });
+  }
+
+  function savePlaylist() {
+    const trackURIs = this.state.playlistTracks.map((track) => track.uri);
+  }
+
+  function search(searchTerm) {
+    console.log(searchTerm);
+  }
+
   return (
     <div>
       <h1>
@@ -23,9 +63,12 @@ function App(props) {
         <SearchBar />
         <div className="App-playlist">
           {/* <!-- Add a SearchResults component --> */}
-          <SearchResults searchResults={searchResults} />
+          <SearchResults searchResults={searchResults} onAdd={addTrack} />
           {/* <!-- Add a Playlist component --> */}
-          <Playlist />
+          <Playlist
+            playlistName={playlistName}
+            playlistTracks={playlistTracks}
+          />
         </div>
       </div>
     </div>
