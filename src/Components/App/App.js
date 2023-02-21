@@ -26,11 +26,11 @@ function App(props) {
 
   function addTrack(track) {
     if (
-      this.state.playlistTracks.find((savedTrack) => savedTrack.id === track.id)
+      playlistTracks.find((savedTrack) => savedTrack.id === track.id)
     ) {
       return;
     }
-    this.setState({ playlistTracks: [...this.state.playlistTracks, track] });
+    setPlaylistTracks({ playlistTracks: [...playlistTracks, track] });
   }
 
   function removeTrack(track) {

@@ -2,8 +2,12 @@ import React from "react";
 import "./Track.css";
 
 function Track(props) {
-  // console.log(props);
   const name = props.track.name;
+  
+  function addTrack() {
+    this.props.onAdd(props.track);
+  }
+  
   return (
     <div className="Track">
       <div className="Track-information">
@@ -12,7 +16,7 @@ function Track(props) {
           {props.track.artist} | {props.track.album}
         </p>
       </div>
-      <button className="Track-action">
+      <button className="Track-action" onClick={addTrack}>
         {/*<!-- + or - will go here -->*/}
         {props.isRemoval ? "-" : "+"}
       </button>
